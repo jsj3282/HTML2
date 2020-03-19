@@ -5,3 +5,4 @@
 		var age = 23;
 		document.write("<div style='color:red; font-size:24px;'>" + "자바 스크립트</div>")
 	
+	
