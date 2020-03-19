@@ -17,13 +17,14 @@
 			.nav ul li a{width:70%; padding:10px 0px 0px 40px; font-size:1.0em; text-decoration:none; color:white;}
 			/*섹션 영역 css*/
 			.section{order:3; display:flex; flex-flow:row;}
-			.section_imagese{order:1; display:flex; flex-flow:column; z-index:-1; margin:10px 0px 20px 300px;}
+			.section_imagese{order:1; display:flex; flex-flow:column; margin:10px 0px 20px 300px;}
 			.section_imagese .image1{order:1; width:160px; height:240px; margin:0px 0px 10px 0px}
-			.section_imagese .image2{order:2; width:160px; height:240px;}
+			.section_imagese .image2{order:2; width:160px; height:240px; z-index:-1;}
+			.section_imagese .h3{order:2; z-index:1;}
 			.section_articles{order:2; padding-top:30px; width:270px;}
 			.section_articles .article{height:50%;}
-			.section_information{order:3; dispaly:flex; flex-flow:column; margin:0px 0px 0px 30px;}
-			.section_information .idpw{order:1;width:200px; magin:20px 0px 0px 0px}
+			.section_information{order:3; dispaly:flex; flex-flow:column; margin:0px 0px 0px 30px; width:300px;}
+			.section_information .idpw{order:1;width:100px; magin:20px 0px 0px 0px}
 			.section_information .article{order:2; margin:50px 0px 0px 0px}
 			.section .image2 .h3{order:2; z-index:0; margin:10px 0px 20px 300px;}
 			/* 섹션 오른쪽 영역 */
@@ -56,6 +57,8 @@
 		<section class="section_imagese">
 			<img class="image1" src="resources/images/l_정우성.jpg">
 			<img class="image2" src="resources/images/l_aside.gif">
+			<h3 class="h3">맛집 장터<br>맛집이야기<br>시작합니다.</h3>
+			
 		</section>
 		<section class="section_articles">
 			<article class="article">
@@ -67,10 +70,11 @@
 		</section>
 		<section class="section_information">
 			<div class="idpw">
-				<span><input type="text" size="10px"><input type="button" value="로그인" height="60px"></span>
-			</div>
-			<div class="idpw">
-				<input type="text" size="10px">
+				<div>
+					<input type="text" style="height:50%; width:100%;">
+					<input type="text" style="height:50%; width:100%;">
+				</div>
+				<input type="button" value="로그인">
 			</div>
 			<a href="#">회원가입</a>&nbsp;<a href="#">ID/PW찾기</a>
 			<div class="article">오늘의 뉴스<br>날씨:32도<br>미세먼지:농도심함<br>운세:누구보다좋음</div>

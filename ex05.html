@@ -144,6 +144,21 @@
 		}
 		
 		document.write("1~100까지 합 : <b>" + sum + "</b>");
+		
+		
+		var apartment = prompt("당신의 아파트 층 수는?");
+		document.write("<table border='1'>");
+		var x, y;
+		for(x = apartment; x >= 1; x--){
+			document.write("<tr>")
+			for(y = 1; y <= 4; y++){
+				document.write("<td>"+ x * 10 + y + "호 " + "</td>")
+			}
+			document.write("</tr>");
+		}
+		document.write("</table>");
+		
+		
 	</script>
 
 </body>
