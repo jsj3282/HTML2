@@ -128,9 +128,10 @@
 		
 		document.write("<h2>for</h2>");
 		var x, y;
+		
 		for(x = 2; x <= 9; x++){
 			document.write("<b> ---[" + x + "단] --- </b>" + "<br>");
-			for(y = 2; x <= 9; y++){
+			for(y = 2; y <= 9; y++){
 				document.write(x + "*" + y + "=" + (x * y) + "<br>");
 			}
 		}
@@ -141,6 +142,7 @@
 			sum += x;
 			x++;
 		}
+		
 		document.write("1~100까지 합 : <b>" + sum + "</b>");
 	</script>
 
