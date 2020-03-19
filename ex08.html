@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<style type="text/css">
+		.image{width:100px; height:100px;}
+	</style>
+	<script>
+		function display01(){
+			document.getElementById("myImage").src = "resources/images/add.png";
+		}
+	</script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+	<img id="myImage" src="test.jpg" onclick="display01()">
+	<img class="image" src="test.jpg">
+<hr>
 	<script type="text/javascript">
 		function display(){
 			name = document.getElementById('name').value;

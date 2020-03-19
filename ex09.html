@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		.div{width:300px; height:500px; display:inline-block; background-color:pink}
+		.image{width:300px; height:400px;}
+		
+	</style>
+	<script type="text/javascript">
+		var i = 1;
+		function display1(){
+			if(i>=8){
+				i = 0;
+			}
+			i++;
+			document.getElementById("image").src = "resources/images/test"+i+".jpg";
+		}
+		function display2(){
+			i--;
+			if(i<1){
+				i = 8;
+			}
+			document.getElementById("image").src = "resources/images/test"+i+".jpg";
+		}
+	</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="div" align = "center">
+		<img src="resources/images/test1.jpg" class="image" id = "image">
+		<input type="button" onclick="display2()" value = "이전">
+		<input type="button" onclick="display1()" value = "다음">
+	</div>
+</body>
+</html>
