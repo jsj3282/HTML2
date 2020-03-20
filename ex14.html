@@ -2,31 +2,46 @@
 <html>
 <head>
 	<style>
+		.div{height:250px; display:flex;}
+		.div2{height:40px; width:70px; background-color:red;}
 		.img{width:100px; height:100px;}
+		.table{width:450px; height:250px; background-color:pink; margin:0 auto} 
 	</style>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<script>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		</head>
+		<body>
+					
+	<script type="text/javascript">
 		var i = 1;
-		document.write("<table border='1'>");
+		var k = 0;
+		var img;
+		var item;
+		document.write("<div class='div'>")
+		document.write("<table class='table' border='1'>");
 		for(var k=0; k<2; k++){
 			document.write("<tr>");
 			for(var j=0; j<4; j++){
-				i++;
-				document.write("<td><img class='img' src='resources/images/최근상품0"+i+".jpg'></td>");
-				
-				// document.getElementById("image").src = "resources/images/최근상품0"+i+".jpg";
+			document.write("<td><img class='img' onclick='add(src)' src='resources/images/최근상품0"+i+".jpg'></td>");
+			i++;
 			}
 			document.write("</tr>");
 		}
 		document.write("</table>");
-
-
+		document.write("<div class='div2'>목록이<br>없습니다</br></div>");
+		document.write("</div>");
+		function add(item){
+			img = document.createElement('img');
+			img.setAttribute('src', item);
+			img.setAttribute('width', 100);
+			img.setAttribute('height', 122);
+			// document.body.appendChild(img);
+			document.getElementById('test').appendChild(img);
 		
+		}
 	</script>
+	<div>
+		<p id="test"></p>
+	</div>
 </body>
-	
-		
 </html>
