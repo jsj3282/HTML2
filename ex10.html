@@ -1,10 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<style type="text/css">
+		.div{background-color:#d94a38; width:120px; height:50px;}
+	</style>
+	<script type="text/javascript">
+		function mOver(obj){
+			obj.innerHTML="Thank You";
+		}
+		function mOut(obj){
+			obj.innerHTML="Mouse Over Me";
+		}
+	</script>
+	<script>
+		function main(){
+			alert('환영합니다');
+		}	
+
+	</script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body onload="main()">
+	<h1 onmouseover="style.color='red'" onmouseout="style.color='black'">
+	Mouse over this text</h1>
+	<div class="div" onmouseover="mOver(this)" onmouseout="mOut(this)">Mouse Over Me</div>
+<hr>
+	<div id = "digClock01"></div>
+	<button onclick="text()">클릭</button>
+	<button onclick="click_()">시작</button>
+	<button onclick="end()">종료</button>
+	<script>
+	var e; var cnt = 1;
+	function click_(){
+		e = setInterval(digClock, 1000);
+	}
+	function digClock(){
+		var today = new Date();
+		var day = today.getMonth()+1+"월"+today.getDate()+"일";
+		var time = today.getHours() + "시" + today.getMinutes()+"분" + today.getSeconds()+"초";
+		document.getElementById("digClock01").innerHTML = day + time;
+		//e = setTimeout('digClock()', 1000);		//1초에 한번씩 호출, setTimeOut()은 자신에 대한 값만 호출 할 수 있다.
+		//e = setInterval(digClock, 1000);		//다른 함수도 호출 할 수 있다.
+	}
+	digClock();
+	function test(){
+		console.log("클릭 클릭!!!" + cnt++);
+	}
+	function end(){
+		// clearTimeout(e);
+		clearInterval(e);
+	}
+	digClock();
+	</script>
+<hr>
+	<p id = "d1"></p>
+	<p id = "d2"></p>
+	<p id = "d3"></p>
+	<script>
+		var today = new Date();
+		document.getElementById("d1").innerHTML = today.getFullYear() + "년";
+		document.getElementById("d2").innerHTML = today.getMonth()+1 + "월" + today.getDate()+"일";
+		document.getElementById("d3").innerHTML = today.getHours() + "시" + today.getMinutes() + "분" + today.getSeconds() + "초";
+	</script>
+<hr>
+	<script>
+		var data = {'f0':100, 'f1':200, 'f2':300};
+		data['f3']=400;		//배열 데이터 저장
+		data.f4 = 500;		//배열 데이터 저장
+		document.write(data.f0 + "<br>");		// 'f0' 키 데이터 조회	
+		document.write(data.f1 + "<br>");		// 'f1' 키 데이터 조회
+		document.write(data['f2'] + "<br>");	
+		document.write(data['f3'] + "<br>");	
+		document.write(data['f4'] + "<br>");	
+	</script>
+<hr>
+	<script>
+		var kdata = ['서울', '부산', '청주', '대구'];
+		function printArr(item, index){
+			document.write("배열 데이터 [" + index + "] : " + item + "<br>");
+		}
+		kdata.forEach(printArr);
+	</script>
+<hr>
+	<script>
+		var kdata = ['서울', '부산'];
+		var p1 = kdata.unshift('청주', '세종');
+		document.write("데이터 : " + p1 + "<br>");
+		document.write("배열 데이터 : " + kdata + "<p/>");
+		var p2 = kdata.shift();
+		document.write("데이터 : " + p2 + "<br>");
+		document.write("배열 데이터 : " + kdata + "<p/>");	
+	</script>
+<hr>
+	<script>
+		var kdata=['서울', '부산', '구포', '대구', '대전'];
+		var p1 = kdata.push('청주', '세종');
+		document.write("데이터 : " + p1 + "<br>");
+		document.write("배열 데이터 : " + kdata + "<p/>");
+		var p2 = kdata.pop();
+		document.write("데이터 : " + p2 + "<br>");
+		document.write("배열 데이터 : " + kdata + "<p/>");
+	</script>
+<hr>
 	<script>
 		var kdata = ['서울', '부산', '구포', '대구', '인천', '대전', '세종'];
 		var str1 = kdata.slice(0,4);

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.div{vertical-align: middle;}
+		.img1{width:300px; height:500px; vertical-align: middle;}
+		.img2{width:50px; height:50px;}
+	</style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		var i = 1;
+		function previous(){
+			i--;
+			if(i<1){
+				i = 8;
+			}
+			document.getElementById("image").src = "resources/images/최근상품0"+i+".jpg";
+		}
+		function next(){
+			if(i>=8){
+				i = 1;
+			}
+			document.getElementById("image").src = "resources/images/최근상품0"+i+".jpg";
+		}
+		function stop_(){
+			clearInterval(e);
+		}
+		function start_(){
+			e = setInterval(digClock, 1000);
+		}
+		function digClock(){
+			i++;
+			if(i >= 8){
+				i = 1;
+			}
+			document.getElementById("image").src = "resources/images/최근상품0"+i+".jpg";
+			//e = setTimeout('digClock()', 1000);		//1초에 한번씩 호출, setTimeOut()은 자신에 대한 값만 호출 할 수 있다.
+			//e = setInterval(digClock, 1000);		//다른 함수도 호출 할 수 있다.
+	}
+	start_();
+	</script>
+	<div class="div">
+		<img class="img2" onclick="previous()" src = "resources/images/왼쪽화살표.jpg">
+		<img id = "image" onclick="stop_()" class="img1" src = "resources/images/최근상품01.jpg">
+		<img class="img2" onclick="next()" src = "resources/images/오른쪽화살표.jpg">
+	</div>
+</body>
+</html>
