@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+	function join(){
+		if(document.getElementById("id").innerHTML==null){
+			alert('아이디는 필수 사항입니다');
+			document.getElementById("id").focus
+		}else if(document.getElementById("pw").innerHTML==null){
+			alert('비밀번호는 필수 사항입니다');
+			document.getElementById("pw").focus
+		}else if(document.getElementById("pw").innerHTML!=document.getElementById("pwchk").innerHTML){
+			alert('비밀번호를 다시 입력해주세요');
+			document.getElementById("pwchk").focus
+		}else{
+			fo.submit();
+			
+		}
+		
+	}	
+	</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form id="fo" action="ex22.html">
+	<h1>계정 등록 페이지 입니다.</h1>
+	<p>
+		<input type="text" placeholder="아이디" id="id"><font style="color:red">(*필수항목)</font><br>
+		<input type="password" placeholder="비밀번호" id="pw"><font style="color:red">(*필수항목)</font><br>
+		<input type="password" placeholder="비밀번호 확인" id="pwchk">확인<br>
+		<input type="text" placeholder="이름">
+	</p>
+<hr>
+	<input type="button" value="등록" onclick="join()">
+	</form>
+</body>
+</html>
