@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		#remove{display:none}
+		#lbl{font-size:30px;}
+		.box1{display:block; margin: 100px; width:300px; height:300px; background-color:blue ;}
+		.box2{display:inline-block; margin: 100px; width:300px; height:300px; background-color: green;}
+		.box3{display:inline-block; margin: 100px; width:300px; height:300px; background-color: pink;}
+		
+		
+	</style>
+	<script>
+		function init(){
+			var but1 = document.getElementById('button1');
+			var but2 = document.getElementById('button2');
+			var but3 = document.getElementById('button3');
+			var but4 = document.getElementById('automatic');
+			var but5 = document.getElementById('delete');
+			but1.addEventListener('click', btn_listner);
+			but2.addEventListener('click', btn_listner);
+			but3.addEventListener('click', btn_listner);
+			but4.addEventListener('click', btn_listner);
+			but5.addEventListener('click', btn_listner);
+		}
+		function btn_listner(event){
+			// let remove = document.getElementById("remove");
+			// remove.setAttribute('display', 'inline-block');
+			let box = document.getElementById("box");
+			let lbl = document.getElementById("lbl");
+			var s = "버튼 1"
+			switch(event.target.id){
+				case 'button1':
+					box.setAttribute('class', 'box1');
+					lbl.innerHTML= '버튼 1 클릭';
+					break;
+				case 'button2':
+					box.setAttribute('class', 'box2');
+					lbl.innerHTML = '버튼 2 클릭';
+					break;
+				case 'button3':
+					box.setAttribute('class', 'box3')
+					lbl.innerHTML = '버튼 3 클릭';
+					break;
+				case 'automatic':
+					remove.setAttribute('background-color', 'red')
+					break;
+				case 'delete':
+					remove.setAttribute('background-color', null)
+					remove.setAttribute('value', null)
+					break;
+			}
+		}	
+	</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body onload="init()">
+	<div>
+		<input type="button" value="버튼1" id="button1">
+		<input type="button" value="버튼2" id="button2">
+		<input type="button" value="버튼3" id="button3">
+		<input type="button" value="자동" id="automatic">
+		<input type="button" value="지우기" id="delete">
+	</div>
+	<div>
+		<div id="box" display="inline-block"><label id="lbl"></label>
+		</div>
+	</div>
+</body>
+</html>

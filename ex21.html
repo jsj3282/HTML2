@@ -9,14 +9,21 @@
 		}else if(document.getElementById("pw").innerHTML==null){
 			alert('비밀번호는 필수 사항입니다');
 			document.getElementById("pw").focus
-		}else if(document.getElementById("pw").innerHTML!=document.getElementById("pwchk").innerHTML){
-			alert('비밀번호를 다시 입력해주세요');
-			document.getElementById("pwchk").focus
 		}else{
 			fo.submit();
 			
 		}
 		
+	}
+	function pwchk(){
+		if(document.getElementById("pw").value == document.getElementById("pw2").value){
+			document.getElementById("label").innerHTML="확인!!!"
+		}else{
+			document.getElementById("label").innerHTML = "불일치!!!"
+			document.getElementById("pw").value = "";
+			document.getElementById("pw2").value = "";
+			document.getElementById("pw").focus();
+		}
 	}	
 	</script>
 <meta charset="UTF-8">
@@ -28,7 +35,7 @@
 	<p>
 		<input type="text" placeholder="아이디" id="id"><font style="color:red">(*필수항목)</font><br>
 		<input type="password" placeholder="비밀번호" id="pw"><font style="color:red">(*필수항목)</font><br>
-		<input type="password" placeholder="비밀번호 확인" id="pwchk">확인<br>
+		<input type="password" placeholder="비밀번호 확인" id="pw2" onchange="pwchk()"><label id="label"></label><br>
 		<input type="text" placeholder="이름">
 	</p>
 <hr>
