@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="jquery-3.4.1.min.js"></script>
+	<script src="jquery-1.12.1-ui.js"></script>
+	<script>
+		var n = 15;
+		var i = 1;
+		$(document).ready(function(){
+			$("#draggable").draggable();
+			$("#lbl").text(n);
+		});
+		$(document).ready(function(){
+			$("#plus").click(function(){
+				n+=3;
+				$("font").css({"font-size":n})
+				// $("#font").css({size:"1++"});
+				$("#lbl").text(n);
+			});
+			$("#minus").click(function(){
+				n-=3;
+				$("font").css({"font-size":n});
+				$("#lbl").text(n);
+			})
+			
+			
+		});
+
+		$(document).ready(function () {
+			$("#slide").click(function () { $("#first").slideToggle('slow'); });
+		}); 
+	</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<font class="font" size="5" style="font-weight: bold;">오늘의 소설<br><br></font>
+	<font class="font" size="3" style="font-weight: bold;">오늘도 덥다<br><br></font>
+	<font class="font" size="3" style="font-weight: bold;">내일도 덥다<br><br></font>
+	<font class="font" size="3" style="font-weight: bold;">모래는 바다<br><br></font>
+	<!-- <h1 id="font">오늘의 소설</h1>
+	<h3 id="font">오늘도 덥다</h3>
+	<h3 id="font">내일도 덥다</h3>
+	<h3 id="font">모래는 바다</h3> -->
+	<div id="draggable" style="border-style:solid; text-align: center; width: 220px; height:100px;" >
+		<div style="background-color: limegreen;">리 모 콘</div>
+		<div style="display: flex; padding: 10px 20px">
+			<img id="plus" src="resources/images/add.png" style="width:50px; height:50px;">
+			<label id="lbl" style="background-color:yellow; width: 100px; text-align: center; padding:15px"></label>
+			<img id="minus" src="resources/images/sub.jpg" style="width:50px; height:50px;">
+		</div>
+	</div>
+</body>
+</html>

@@ -18,6 +18,10 @@
 			$('button').click(function (){		//ready 생략 가능
 				$("p").hide();
 			});
+			$('button.show').click(function (){		//ready 생략 가능
+				$("p").show();
+			});
+			
 		});
 		/*
 		function test(){
@@ -31,6 +35,7 @@
 <body>
 	<p>메시지 : 제이쿼리를 공부하고 있습니다.</p>
 	<button>메시지 삭제</button>
-	<button onclick="test()">메시지 삭제</button>
+	<button class="show">메시지 보이기</button>
+	<!-- <button onclick="test()">메시지 삭제</button> -->
 </body>
 </html>
